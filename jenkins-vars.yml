@@ -1,0 +1,32 @@
+---
+
+# jenkins variables
+project_name: docker-yaak
+external_type: github_stable
+release_type: stable
+release_tag: latest
+ls_branch: main
+build_armhf: false
+repo_vars:
+  - EXT_GIT_BRANCH = 'master'
+  - EXT_USER = 'yaakapp'
+  - EXT_REPO = 'app'
+  - BUILD_VERSION_ARG = 'YAAK_RELEASE'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-yaak'
+  - CONTAINER_NAME = 'yaak'
+  - DOCKERHUB_IMAGE = 'linuxserver/yaak'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/yaak'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/yaak'
+  - DIST_IMAGE = 'ubuntu'
+  - MULTIARCH = 'false'
+  - CI = 'true'
+  - CI_WEB = 'true'
+  - CI_PORT = '3000'
+  - CI_SSL = 'false'
+  - CI_DELAY = '120'
+  - CI_DOCKERENV = ''
+  - CI_AUTH = ''
+  - CI_WEBPATH = ''
+sponsor_links:
+  - { name: "gschier", url: "https://github.com/sponsors/gschier" }
