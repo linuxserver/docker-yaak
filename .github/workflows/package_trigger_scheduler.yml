@@ -1,0 +1,50 @@
+name: Package Trigger Scheduler
+
+on:
+  schedule:
+    - cron:  '22 4 * * 2'
+  workflow_dispatch:
+
+jobs:
+  package-trigger-scheduler:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
+        with:
+          fetch-depth: '0'
+
+      - name: Package Trigger Scheduler
+        run: |
+          printf "# Package trigger scheduler for docker-yaak\n\n" >> $GITHUB_STEP_SUMMARY
+          printf "Found the branches:\n\n%s\n" "$(git for-each-ref --format='- %(refname:lstrip=3)' refs/remotes)" >> $GITHUB_STEP_SUMMARY
+          for br in $(git for-each-ref --format='%(refname:lstrip=3)' refs/remotes)
+          do
+            if [[ "${br}" == "HEAD" ]]; then
+              printf "\nSkipping %s.\n" ${br} >> $GITHUB_STEP_SUMMARY
+              continue
+            fi
+            printf "\n## Evaluating \`%s\`\n\n" ${br} >> $GITHUB_STEP_SUMMARY
+            ls_branch=$(curl -sX GET https://raw.githubusercontent.com/linuxserver/docker-yaak/${br}/jenkins-vars.yml | yq -r '.ls_branch')
+            if [ "${br}" == "${ls_branch}" ]; then
+              echo "Branch appears to be live; checking workflow." >> $GITHUB_STEP_SUMMARY
+              if curl -sfX GET https://raw.githubusercontent.com/linuxserver/docker-yaak/${br}/.github/workflows/package_trigger.yml > /dev/null 2>&1; then
+                echo "Triggering package trigger workflow for branch ${br}" >> $GITHUB_STEP_SUMMARY
+                triggered_branches="${triggered_branches}${br} "
+                curl -iX POST \
+                  -H "Authorization: token ${{ secrets.CR_PAT }}" \
+                  -H "Accept: application/vnd.github.v3+json" \
+                  -d "{\"ref\":\"refs/heads/${br}\"}" \
+                  https://api.github.com/repos/linuxserver/docker-yaak/actions/workflows/package_trigger.yml/dispatches
+                sleep 30
+              else
+                echo "Skipping branch ${br} due to no package trigger workflow present." >> $GITHUB_STEP_SUMMARY
+              fi
+            else
+              echo "Skipping branch ${br} due to being detected as dev branch." >> $GITHUB_STEP_SUMMARY
+            fi
+          done
+          echo "**** Package check build(s) triggered for branch(es): ${triggered_branches} ****"
+          echo "**** Notifying Discord ****"
+          curl -X POST -H "Content-Type: application/json" --data '{"avatar_url": "https://cdn.discordapp.com/avatars/354986384542662657/df91181b3f1cf0ef1592fbe18e0962d7.png","embeds": [{"color": 9802903,
+            "description": "**Package Check Build(s) Triggered for yaak** \n**Branch(es):** '"${triggered_branches}"' \n**Build URL:** '"https://ci.linuxserver.io/blue/organizations/jenkins/Docker-Pipeline-Builders%2Fdocker-yaak/activity/"' \n"}],
+            "username": "Github Actions"}' ${{ secrets.DISCORD_WEBHOOK }}
