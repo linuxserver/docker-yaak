@@ -2,13 +2,15 @@
 
 # jenkins variables
 project_name: docker-yaak
-external_type: na
-custom_version_command: curl -sX GET "https://api.github.com/repos/yaakapp/app/releases/latest" | jq -r .tag_name | sed 's|^v||'
+external_type: github_stable
 release_type: stable
 release_tag: latest
 ls_branch: main
 build_armhf: false
 repo_vars:
+  - EXT_GIT_BRANCH = 'master'
+  - EXT_USER = 'yaakapp'
+  - EXT_REPO = 'app'
   - BUILD_VERSION_ARG = 'YAAK_RELEASE'
   - LS_USER = 'linuxserver'
   - LS_REPO = 'docker-yaak'
