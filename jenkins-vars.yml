@@ -9,8 +9,8 @@ ls_branch: main
 build_armhf: false
 repo_vars:
   - EXT_GIT_BRANCH = 'master'
-  - EXT_USER = 'OctoputApp'
-  - EXT_REPO = 'Yaak'
+  - EXT_USER = 'getyaak'
+  - EXT_REPO = 'app'
   - BUILD_VERSION_ARG = 'YAAK_RELEASE'
   - LS_USER = 'linuxserver'
   - LS_REPO = 'docker-yaak'
