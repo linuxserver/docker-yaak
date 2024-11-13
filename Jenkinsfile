@@ -20,8 +20,8 @@ pipeline {
     QUAYIO_API_TOKEN=credentials('quayio-repo-api-token')
     GIT_SIGNING_KEY=credentials('484fbca6-9a4f-455e-b9e3-97ac98785f5f')
     EXT_GIT_BRANCH = 'master'
-    EXT_USER = 'OctoputApp'
-    EXT_REPO = 'Yaak'
+    EXT_USER = 'getyaak'
+    EXT_REPO = 'app'
     BUILD_VERSION_ARG = 'YAAK_RELEASE'
     LS_USER = 'linuxserver'
     LS_REPO = 'docker-yaak'
