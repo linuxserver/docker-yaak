@@ -21,13 +21,13 @@ RUN \
   echo "**** install yaak ****" && \
   apt-get update && \
   if [ -z ${YAAK_RELEASE+x} ]; then \
-    YAAK_RELEASE=$(curl -sX GET "https://api.github.com/repos/getyaak/app/releases/latest" \
+    YAAK_RELEASE=$(curl -sX GET "https://api.github.com/repos/mountain-loop/yaak/releases/latest" \
       | jq -r .tag_name); \
   fi && \
   YAAK_VERSION=$(echo "${YAAK_RELEASE}" | sed 's|^v||') && \
   curl -o \
     /tmp/yaak.deb -L \
-    "https://github.com/getyaak/app/releases/download/v${YAAK_VERSION}/yaak_${YAAK_VERSION}_amd64.deb" && \
+    "https://github.com/mountain-loop/yaak/releases/download/v${YAAK_VERSION}/yaak_${YAAK_VERSION}_amd64.deb" && \
   apt-get install -y --no-install-recommends \
     /tmp/yaak.deb && \
   printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version && \
