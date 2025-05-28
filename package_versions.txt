@@ -20,11 +20,17 @@ NAME                                                                          VE
 @yaakapp/importer-openapi                                                     0.0.1                                   npm                         
 @yaakapp/importer-postman                                                     0.0.1                                   npm                         
 @yaakapp/importer-yaak                                                        0.0.1                                   npm                         
+@yaakapp/template-function-cookie                                             0.0.1                                   npm                         
+@yaakapp/template-function-encode                                             0.0.1                                   npm                         
 @yaakapp/template-function-fs                                                 0.0.1                                   npm                         
 @yaakapp/template-function-hash                                               0.0.1                                   npm                         
+@yaakapp/template-function-json                                               0.0.1                                   npm                         
 @yaakapp/template-function-prompt                                             0.0.1                                   npm                         
+@yaakapp/template-function-regex                                              0.0.1                                   npm                         
 @yaakapp/template-function-request                                            0.0.1                                   npm                         
 @yaakapp/template-function-response                                           0.0.1                                   npm                         
+@yaakapp/template-function-uuid                                               0.0.1                                   npm                         
+@yaakapp/template-function-xml                                                0.0.1                                   npm                         
 accepts                                                                       1.3.8                                   npm                         
 acorn                                                                         8.8.1                                   npm                         
 acorn-bigint                                                                  1.0.0                                   npm                         
@@ -1278,5 +1284,5 @@ xserver-xorg-video-radeon                                                     1:
 xtend                                                                         4.0.2                                   npm                         
 xterm                                                                         390-1ubuntu3                            deb                         
 xutils                                                                        1:7.7+23ubuntu3                         deb                         
-yaak                                                                          2025.2.3                                deb                         
+yaak                                                                          2025.3.0                                deb                         
 zlib1g                                                                        1:1.3.dfsg-3.1ubuntu2.1                 deb                         
