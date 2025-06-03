@@ -61,6 +61,11 @@ The architectures supported by this image are:
 
 This image sets up the Yaak desktop app and makes its interface available via KasmVNC server in the browser. The interface is available at `http://your-ip:3000` or `https://your-ip:3001`.
 
+### Strict reverse proxies
+
+This image uses a self-signed certificate by default. This naturally means the scheme is `https`.
+If you are using a reverse proxy which validates certificates, you need to [disable this check for the container](https://docs.linuxserver.io/faq#strict-proxy).
+
 **Modern GUI desktop apps have issues with the latest Docker and syscall compatibility, you can use Docker with the `--security-opt seccomp=unconfined` setting to allow these syscalls on hosts with older Kernels or libseccomp**
 
 ### Security
