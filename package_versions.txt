@@ -2,6 +2,7 @@ NAME                                                                          VE
 @yaak/action-copy-curl                                                        0.1.0                                   npm                         
 @yaak/action-copy-grpcurl                                                     0.1.0                                   npm                         
 @yaak/auth-apikey                                                             0.1.0                                   npm                         
+@yaak/auth-aws                                                                0.1.0                                   npm                         
 @yaak/auth-basic                                                              0.1.0                                   npm                         
 @yaak/auth-bearer                                                             0.1.0                                   npm                         
 @yaak/auth-jwt                                                                0.1.0                                   npm                         
@@ -12,6 +13,7 @@ NAME                                                                          VE
 @yaak/importer-insomnia                                                       0.1.0                                   npm                         
 @yaak/importer-openapi                                                        0.1.0                                   npm                         
 @yaak/importer-postman                                                        0.1.0                                   npm                         
+@yaak/importer-postman-environment                                            0.1.0                                   npm                         
 @yaak/importer-yaak                                                           0.1.0                                   npm                         
 @yaak/template-function-cookie                                                0.1.0                                   npm                         
 @yaak/template-function-encode                                                0.1.0                                   npm                         
@@ -1177,7 +1179,7 @@ xsettingsd                                                                    1.
 xterm                                                                         390-1ubuntu3                            deb                         
 xutils                                                                        1:7.7+23ubuntu3                         deb                         
 xvfb                                                                          2:21.1.12-1ubuntu1.4                    deb                         
-yaak                                                                          2025.6.1                                deb                         
+yaak                                                                          2025.7.0                                deb                         
 yarl                                                                          1.22.0                                  python                      
 zipp                                                                          3.19.2                                  python                      
 zlib1g                                                                        1:1.3.dfsg-3.1ubuntu2.1                 deb                         
