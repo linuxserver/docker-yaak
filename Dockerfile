@@ -24,10 +24,11 @@ RUN \
     YAAK_RELEASE=$(curl -sX GET "https://api.github.com/repos/mountain-loop/yaak/releases/latest" \
       | jq -r .tag_name); \
   fi && \
-  YAAK_VERSION=$(echo "${YAAK_RELEASE}" | sed 's|^v||') && \
-  curl -o \
+  YAAK_URL=$(curl -sX GET "https://api.github.com/repos/mountain-loop/yaak/releases/tags/${YAAK_RELEASE}" | jq -r '.assets[].browser_download_url' \
+    | grep "amd64" | grep ".deb$") && \
+  curl -fo \
     /tmp/yaak.deb -L \
-    "https://github.com/mountain-loop/yaak/releases/download/v${YAAK_VERSION}/yaak_${YAAK_VERSION}_amd64.deb" && \
+    "${YAAK_URL}" && \
   apt-get install -y --no-install-recommends \
     /tmp/yaak.deb && \
   printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version && \
