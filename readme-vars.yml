@@ -101,5 +101,6 @@ init_diagram: |
   "yaak:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "28.12.25:", desc: "Add Wayland init logic."}
   - {date: "29.07.25:", desc: "Rebase to selkies. Breaking Change: HTTPS is now required. Either use a reverse proxy with SSL cert or direct connect to port 8181 with HTTPS."}
   - {date: "12.09.24:", desc: "Initial release."}
