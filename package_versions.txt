@@ -1273,7 +1273,7 @@ xterm                                                                         39
 xutils                                                                        1:7.7+23ubuntu3                         deb                         
 xvfb                                                                          2:21.1.12-1ubuntu1.5                    deb                         
 xwayland                                                                      2:23.2.6-1ubuntu0.8                     deb                         
-yaak                                                                          2026.2.2                                deb                         
+yaak                                                                          2026.2.3                                deb                         
 yarl                                                                          1.22.0                                  python                      
 zipp                                                                          3.23.0                                  python                      
 zlib1g                                                                        1:1.3.dfsg-3.1ubuntu2.1                 deb                         
