@@ -11,7 +11,9 @@ LABEL maintainer="aptalca"
 
 ENV \
   HOME="/config" \
-  TITLE="Yaak"
+  TITLE="Yaak" \
+  NO_GAMEPAD=true \
+  PIXELFLUX_WAYLAND=true
 
 RUN \
   echo "**** add icon ****" && \
