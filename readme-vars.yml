@@ -96,7 +96,7 @@ init_diagram: |
     svc-xsettingsd -> legacy-services
   }
   Base Images: {
-    "baseimage-selkies:ubuntunoble" <- "baseimage-ubuntu:noble"
+    "baseimage-selkies:ubunturesolute" <- "baseimage-ubuntu:resolute"
   }
   "yaak:latest" <- Base Images
 # changelog
