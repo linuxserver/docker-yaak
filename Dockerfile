@@ -34,6 +34,9 @@ RUN \
     "${YAAK_URL}" && \
   apt-get install -y --no-install-recommends \
     /tmp/yaak.deb && \
+  ln -s \
+    /usr/bin/yaak-app-client \
+    /usr/bin/yaak-app && \
   printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version && \
   echo "**** cleanup ****" && \
   apt-get clean && \
