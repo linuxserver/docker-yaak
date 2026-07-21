@@ -28,7 +28,7 @@ RUN \
       | sort -rV | head -1); \
   fi && \
   YAAK_URL=$(curl -sX GET "https://api.github.com/repos/mountain-loop/yaak/releases/tags/${YAAK_RELEASE}" | jq -r '.assets[].browser_download_url' \
-    | grep "amd64" | grep ".deb$") && \
+    | grep -v "cef" | grep "amd64" | grep ".deb$") && \
   curl -fo \
     /tmp/yaak.deb -L \
     "${YAAK_URL}" && \
