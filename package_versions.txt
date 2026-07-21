@@ -1270,7 +1270,7 @@ xterm                                                                         40
 xutils                                                                        1:7.7+26ubuntu1                        deb                         
 xvfb                                                                          2:21.1.22-1ubuntu1                     deb                         
 xwayland                                                                      2:24.1.10-1                            deb                         
-yaak                                                                          2026.4.0                               deb                         
+yaak                                                                          2026.5.0                               deb                         
 yarl                                                                          1.24.2                                 python                      
 zipp                                                                          3.19.2                                 python                      
 zipp                                                                          3.23.0                                 python                      
