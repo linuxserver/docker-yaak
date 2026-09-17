@@ -6,6 +6,7 @@ NAME                                                                          VE
 @yaak/auth-aws                                                                0.1.0                                   npm                         
 @yaak/auth-basic                                                              0.1.0                                   npm                         
 @yaak/auth-bearer                                                             0.1.0                                   npm                         
+@yaak/auth-digest                                                             0.1.0                                   npm                         
 @yaak/auth-jwt                                                                0.1.0                                   npm                         
 @yaak/auth-ntlm                                                               0.1.0                                   npm                         
 @yaak/auth-oauth1                                                             0.1.0                                   npm                         
@@ -647,7 +648,7 @@ grep                                                                          3.
 groff-base                                                                    1.23.0-10                               deb                         
 gsettings-desktop-schemas                                                     50.0-1ubuntu2                           deb                         
 gstreamer1.0-plugins-base                                                     1.28.2-1                                deb                         
-gstreamer1.0-plugins-good                                                     1.28.2-2ubuntu0.1                       deb                         
+gstreamer1.0-plugins-good                                                     1.28.2-2ubuntu0.2                       deb                         
 gtk-update-icon-cache                                                         4.22.4+ds-0ubuntu0.1                    deb                         
 gzip                                                                          1.14-1~exp2ubuntu1.1                    deb                         
 h11                                                                           0.16.0                                  python                      
@@ -1318,7 +1319,7 @@ xterm                                                                         40
 xutils                                                                        1:7.7+26ubuntu1                         deb                         
 xvfb                                                                          2:21.1.22-1ubuntu1                      deb                         
 xwayland                                                                      2:24.1.10-1                             deb                         
-yaak                                                                          2026.7.1                                deb                         
+yaak                                                                          2026.8.0                                deb                         
 yarl                                                                          1.24.5                                  python                      
 zipp                                                                          3.19.2                                  python                      
 zipp                                                                          3.23.0                                  python                      
